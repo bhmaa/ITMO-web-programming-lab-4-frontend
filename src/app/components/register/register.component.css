@@ -1,0 +1,84 @@
+.registration-container {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.registration-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #555;
+  color: white;
+  margin-bottom: .5rem;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.submit-btn {
+  color: white;
+  background-color: #5c7cfa;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #678efa;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn {
+  flex-grow: 1;
+  margin: 5px;
+}
+
+.login-btn {
+  background-color: #7c5cfa;
+}
+
+.login-btn:hover {
+  background-color: #8a6ffa;
+}
+
+.error-message {
+  color: #f76c6c;
+  margin-top: 1rem;
+}
+
+.submit-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}

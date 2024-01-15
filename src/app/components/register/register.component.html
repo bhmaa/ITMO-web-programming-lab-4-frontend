@@ -1,0 +1,22 @@
+<div class="registration-container">
+  <h2>Hello there!</h2>
+  <form (ngSubmit)="register($event)">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required/>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required/>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <div class="form-buttons">
+      <button type="submit" class="submit-btn" [disabled]="!username || !password">Register</button>
+      <button type="button" class="submit-btn login-btn" (click)="login($event)" [disabled]="!username || !password">
+        Log In
+      </button>
+    </div>
+  </form>
+</div>

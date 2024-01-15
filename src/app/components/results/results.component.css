@@ -1,0 +1,61 @@
+.results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  gap: 20px;
+  padding: 20px;
+}
+
+app-canvas {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+app-coordinates-form {
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+app-table {
+  margin-top: 20px;
+}
+
+@media (max-width: 1206px) {
+  .results-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  app-canvas,
+  app-coordinates-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+  app-canvas > *,
+  app-coordinates-form > * {
+    margin: 0 auto;
+  }
+
+  app-canvas, app-coordinates-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  app-canvas > *, app-coordinates-form > * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 847px) {
+  app-canvas,
+  app-coordinates-form {
+    max-width: 100%;
+  }
+}

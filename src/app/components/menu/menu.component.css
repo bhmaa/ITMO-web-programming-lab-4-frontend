@@ -1,0 +1,91 @@
+nav {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav > li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #555;
+  border-radius: 5px;
+  text-decoration: none;
+  outline: none;
+}
+
+nav .student-info {
+  margin-right: auto;
+  text-align: left;
+}
+
+nav .student-info > span {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav .student-info > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav .student-info > ul > li {
+  color: #999;
+  padding-left: 1rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+nav .student-info > span {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 848px) and (max-width: 1206px) {
+  nav .student-info > span {
+    font-size: 0.9rem;
+  }
+
+  nav .student-info > ul > li {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 847px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  nav .student-info > span {
+    font-size: 1rem;
+  }
+
+  nav .student-info > ul {
+    display: none;
+  }
+}

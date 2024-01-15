@@ -1,0 +1,31 @@
+<div class="coordinates-form" style="color: white; background-color: #333; padding: 20px;">
+  <form (ngSubmit)="onSubmit(coordinatesForm)" #coordinatesForm="ngForm">
+    <div>
+      <label for="xCoordinate">X Coordinate:</label>
+      <select id="xCoordinate" required [(ngModel)]="coordinates.x" name="x">
+        <option *ngFor="let option of xOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="yCoordinate">Y Coordinate:</label>
+      <input type="text" id="yCoordinate" required
+             pattern="^(-5(\.0*)?|-4(\.0*)?|-?3(\.0*)?|-?[0-2](\.[0-9]+)?)$"
+             [(ngModel)]="coordinates.y" name="y" #yInput="ngModel">
+      <div *ngIf="yInput.errors && (yInput.dirty || yInput.touched)">
+        <span *ngIf="yInput.errors['required']">Y coordinate is required</span>
+        <span *ngIf="yInput.errors['pattern']">Enter a number between -5 and 3</span>
+      </div>
+    </div>
+    <div>
+      <label for="radius">Radius:</label>
+      <select id="radius" required [(ngModel)]="coordinates.r" (ngModelChange)="onRadiusChange()" name="radius">
+        <option *ngFor="let option of rOptions" [ngValue]="option">{{ option }}</option>
+      </select>
+      <span *ngIf="!isRPositive()">Radius should be positive</span>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!coordinatesForm.valid || !isRPositive()">Submit</button>
+    </div>
+  </form>
+  <button type="button" (click)="onClear()">Clear</button>
+</div>

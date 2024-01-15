@@ -1,0 +1,40 @@
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-content a {
+  color: #5c7cfa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #678efa;
+}
+
+.footer-content span {
+  padding: 0 15px;
+}
+
+.itmo-logo {
+  height: 50px;
+  width: auto;
+}

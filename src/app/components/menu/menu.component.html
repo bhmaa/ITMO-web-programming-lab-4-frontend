@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+    <li class="student-info">
+      <span>Starikova Daria</span>
+      <ul>
+        <li>P3132</li>
+        <li>23646</li>
+      </ul>
+    </li>
+    <li><a routerLink="/results" *ngIf="authService.isLoggedIn()">Results</a></li>
+    <li><a href="#" (click)="authService.isLoggedIn() ? logout() : login()">
+      {{authService.isLoggedIn() ? 'Log Out' : 'Log In'}}
+    </a></li>
+  </ul>
+</nav>
