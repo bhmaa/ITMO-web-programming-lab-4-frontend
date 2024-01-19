@@ -1,24 +1,26 @@
-<table>
-  <thead>
-  <tr>
-    <th>X</th>
-    <th>Y</th>
-    <th>R</th>
-    <th>Result</th>
-    <th>Attempt Time</th>
-    <th>Execution Time (ns)</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let hit of hits">
-    <td>{{ hit.x }}</td>
-    <td>{{ hit.y }}</td>
-    <td>{{ hit.r }}</td>
-    <td [class.hit]="hit.hit" [class.miss]="!hit.hit">
-      {{ hit.hit ? 'HIT' : 'MISS' }}
-    </td>
-    <td>{{ hit.attemptTime | date:'medium' }}</td>
-    <td>{{ hit.executionTime }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>Result</th>
+      <th>Attempt Time</th>
+      <th>Execution Time (ns)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hit of hits">
+      <td>{{ hit.x }}</td>
+      <td>{{ hit.y }}</td>
+      <td>{{ hit.r }}</td>
+      <td [class.hit]="hit.hit" [class.miss]="!hit.hit">
+        {{ hit.hit ? 'HIT' : 'MISS' }}
+      </td>
+      <td>{{ hit.attemptTime | date:'medium' }}</td>
+      <td>{{ hit.executionTime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

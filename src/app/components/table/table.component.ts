@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
 
   getHits(): void {
     this.hitsService.getHits().subscribe(
-      hits => this.hits = hits,
+      hits => this.hits = hits.reverse(),
       err => console.error(err)
     );
   }

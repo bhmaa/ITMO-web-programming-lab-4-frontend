@@ -2,13 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {EMPTY, Observable, Subject, tap} from 'rxjs';
 import {Hit} from '../model/hit';
-import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class HitsService {
-  private hitsUrl = `${environment.apiUrl}/hits`;
+  private hitsUrl = "http://localhost:8080/hits";
   private reloadRequest = new Subject<void>();
 
   constructor(private http: HttpClient) {

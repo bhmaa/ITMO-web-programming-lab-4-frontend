@@ -20,7 +20,11 @@ export class RegisterComponent {
     event.preventDefault();
     this.authService.register(this.username, this.password).subscribe(
       (response: any) => {
-        localStorage.setItem('token', response.token);
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+        } else {
+          localStorage.setItem('token', response.jwtToken);
+        }
         this.router.navigate(['/results']);
       },
       error => {
@@ -36,8 +40,12 @@ export class RegisterComponent {
     this.authService.login(this.username, this.password).subscribe(
       (response: any) => {
         console.log('Login response:', response);
-        localStorage.setItem('token', response.token);
-        if (response && response.token) {
+        if (response.token) {
+          localStorage.setItem('token', response.token);
+        } else {
+          localStorage.setItem('token', response.jwtToken);
+        }
+        if (response && (response.token || response.jwtToken)) {
           this.router.navigate(['/results']);
         } else {
           console.error('JWT not present in response', response);
